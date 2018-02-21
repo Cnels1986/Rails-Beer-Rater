@@ -1,2 +1,21 @@
 <% provide(:title, "Locations") %>
-<h1>This page will list all the beers at a selected location</h1>
+<h1>Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.id %></td>
+        <td><%= location.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
