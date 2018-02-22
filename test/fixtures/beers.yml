@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
+  user: one
   name: MyString
-  breweries: one
-  locations: one
+  brewery: one
+  location: one
   beer_type: MyString
   rating: 1
 
 two:
-  user_id: 1
+  user: two
   name: MyString
-  breweries: two
-  locations: two
+  brewery: two
+  location: two
   beer_type: MyString
   rating: 1

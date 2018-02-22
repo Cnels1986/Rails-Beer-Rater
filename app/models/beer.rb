@@ -1,4 +1,5 @@
 class Beer < ApplicationRecord
-  belongs_to :breweries
-  belongs_to :locations
+  belongs_to :user
+  belongs_to :brewery
+  belongs_to :location
 end
