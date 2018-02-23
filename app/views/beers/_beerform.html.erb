@@ -1,0 +1,47 @@
+<%= form_with(model: beer, local: true) do |form| %>
+  <% if beer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(beer.errors.count, "error") %> prohibited this beer from being saved:</h2>
+
+      <ul>
+      <% beer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :beer_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :beer_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brewery_id %>
+    <%= form.text_field :brewery_id, id: :beer_brewery_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.text_field :location_id, id: :beer_location_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :beer_type %>
+    <%= form.text_field :beer_type, id: :beer_beer_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, id: :beer_rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
