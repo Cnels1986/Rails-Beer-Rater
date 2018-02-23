@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get '/addbeer',    to: 'beers#new'
   get '/editbeer',   to: 'beers#edit'
   get '/removebeer', to: 'beers#remove'
+  post '/beers',      to: 'beers#create'
+  get '/beer/:id', to: 'beers#show', as: 'beer_url'
   resources :users
 end

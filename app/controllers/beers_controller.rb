@@ -23,6 +23,9 @@ class BeersController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_beer
