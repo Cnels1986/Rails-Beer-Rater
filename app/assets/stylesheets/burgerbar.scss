@@ -24,6 +24,12 @@
   left: 100px;
   z-index: 3;
   transition: .5s ease-in-out;
+
+  span{
+    position: relative;
+    top: -5px;
+    font-size: 30px;
+  }
 }
 
 #navBar.movePanel{
