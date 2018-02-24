@@ -1,4 +1,6 @@
 <h1>Checkin Beer</h1>
 <%= render 'beerform', beer: @beer %>
-<%= link_to "Edit Beer", editbeer_path %>
-<%= link_to "Remove Beer", removebeer_path %>
+<div class="changeBrew">
+  <%= link_to "Edit Beer", editbeer_path %>
+  <%= link_to "Remove Beer", removebeer_path %>
+</div>

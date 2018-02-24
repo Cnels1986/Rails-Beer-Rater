@@ -1,15 +1,25 @@
 <header>
   <div class="headerFlex">
-    <div class="checkIn">
-      <%= link_to "Check in Beer", addbeer_path %>
-    </div>
-    <div class="navigation">
-      <ul>
-        <li><%= link_to "Beer List", beers_path %></li>
-        <li><%= link_to "Profile", '#' %></li>
-        <li><%= link_to "Discover Breweries", breweries_path %></li>
-        <li><%= link_to "Discover Bars", locations_path %></li>
-      </ul>
-    </div>
+    <% if logged_in? %>
+
+      <div id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="navigation" id="navBar">
+        <ul>
+          <li><%= link_to "Check in Beer", addbeer_path %></li>
+          <li><%= link_to "Beer List", beers_path %></li>
+          <li><%= link_to "Discover Breweries", breweries_path %></li>
+          <li><%= link_to "Discover Bars", locations_path %></li>
+          <li><%= link_to "Profile", '#' %></li>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        </ul>
+      </div>
+    <% else %>
+        <h2 class="loginLink"><%= link_to "Log in", login_path %></h2>
+    <% end %>
   </div>
 </header>

@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get '/removebeer', to: 'beers#remove'
   post '/beers',      to: 'beers#create'
   get '/beer/:id', to: 'beers#show', as: 'beer_url'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   resources :users
 end
