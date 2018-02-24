@@ -1,5 +1,5 @@
 <% provide(:title, "Beers") %>
-<h1>Beers</h1>
+<h1>Brews</h1>
 
 <table>
   <thead>
@@ -20,7 +20,7 @@
       <tr>
         <td><%= beer.id %></td>
         <!-- change to display user's name beer.user.name? -->
-        <td><%= beer.user.name %></td>
+        <td><%= beer.user_id %></td>
         <td><%= beer.name %></td>
         <td><%= beer.brewery.name %></td>
         <td><%= beer.location.name %></td>
