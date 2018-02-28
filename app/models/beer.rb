@@ -4,7 +4,5 @@ class Beer < ApplicationRecord
   belongs_to :location
   validates :name, presence: true
   validates :rating, presence: true
-  validates :brewery_id, presence: false
-  validates :location_id, presence: false
-  validates :beer_type, presence: false
+  validates_inclusion_of :rating, :in => 1..5
 end
