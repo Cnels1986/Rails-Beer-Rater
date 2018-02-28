@@ -12,15 +12,18 @@ class BeersController < ApplicationController
   def create
     @beer = Beer.new(beer_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @beer.save
-        format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
+        # format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
+        flash[:info] = "Beer checked in."
+        redirect_to beers_path
         # format.json { render :show, status: :created, location: @beer }
       else
-        format.html { render :new }
+        # format.html { render :new }
+        render 'new'
         # format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   def show
