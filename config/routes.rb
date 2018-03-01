@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_reset/new'
+
+  get 'password_reset/edit'
+
   root 'beer_rater#home'
   get '/beers',      to: 'beer_rater#beers'
   get '/breweries',  to: 'beer_rater#breweries'
@@ -17,4 +21,6 @@ Rails.application.routes.draw do
   resources :users
 
   resources :account_activations, only: [:edit]
+
+  # resources :password_resets,     only: [:new, :create, :edit, :update]
 end
