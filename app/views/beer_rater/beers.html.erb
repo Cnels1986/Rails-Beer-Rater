@@ -4,23 +4,20 @@
 <table>
   <thead>
     <tr>
-      <th>Number</th>
       <th>User</th>
       <th>Name</th>
       <th>Brewery</th>
       <th>Location</th>
       <th>Beer type</th>
       <th>Rating</th>
-      <!-- <th colspan="3"></th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td><%= beer.id %></td>
         <!-- change to display user's name beer.user.name? -->
-        <td><%= beer.user_id %></td>
+        <td><%= beer.user.name %></td>
         <td><%= beer.name %></td>
         <td><%= beer.brewery.name %></td>
         <td><%= beer.location.name %></td>
