@@ -13,7 +13,8 @@ class BeersController < ApplicationController
     # byebug
     brewery = Brewery.find_or_create_by(name: params[:beer][:brewery_name])
     location = Location.find_or_create_by(name: params[:beer][:location_name])
-    @beer = Beer.new(beer_params.merge(brewery_id: brewery.id, location_id: location.id))
+    user = current_user
+    @beer = Beer.new(beer_params.merge(brewery_id: brewery.id, location_id: location.id, user_id: user.id))
 
     # respond_to do |format|
       if @beer.save
@@ -36,6 +37,6 @@ class BeersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
-      params.require(:beer).permit(:user_id, :name, :beer_type, :rating)
+      params.require(:beer).permit(:name, :beer_type, :rating)
     end
 end

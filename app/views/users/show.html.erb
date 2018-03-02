@@ -9,4 +9,28 @@
       </h1>
     </section>
   </aside>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Brewery</th>
+        <th>Location</th>
+        <th>Beer type</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @beers.each do |beer| %>
+        <tr>
+          <td><%= beer.name %></td>
+          <td><%= beer.brewery.name %></td>
+          <td><%= beer.location.name %></td>
+          <td><%= beer.beer_type %></td>
+          <td><%= beer.rating %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
 </div>
