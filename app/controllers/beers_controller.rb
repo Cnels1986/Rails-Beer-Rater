@@ -10,24 +10,23 @@ class BeersController < ApplicationController
   end
 
   def create
-    @beer = Beer.new(beer_params)
+    # byebug
+    brewery = Brewery.find_or_create_by(name: params[:beer][:brewery_name])
+    location = Location.find_or_create_by(name: params[:beer][:location_name])
+    @beer = Beer.new(beer_params.merge(brewery_id: brewery.id, location_id: location.id))
 
     # respond_to do |format|
       if @beer.save
-        # format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
         flash[:info] = "Beer checked in."
         redirect_to beers_path
-        # format.json { render :show, status: :created, location: @beer }
       else
-        # format.html { render :new }
         render 'new'
-        # format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
-    # end
   end
 
   def show
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -37,6 +36,6 @@ class BeersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
-      params.require(:beer).permit(:user_id, :name, :brewery_id, :location_id, :beer_type, :rating)
+      params.require(:beer).permit(:user_id, :name, :beer_type, :rating)
     end
 end
