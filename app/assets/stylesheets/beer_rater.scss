@@ -41,7 +41,7 @@ header{
   font-family: 'Oswald', sans-serif;
   width: 85%;
   margin: auto;
-  height: 95vh;
+  height: 100%;
   background-color: white;
   h1{
     font-family: 'Play', sans-serif;
@@ -141,6 +141,6 @@ header{
 
 .container{
   background: linear-gradient(white 33%, gold);
-  height: 100vh;
   border-top: 2px solid black;
+  padding-bottom: 40px;
 }
