@@ -8,27 +8,26 @@
         <span></span>
       </div>
 
-      <div class="navigation" id="navBar">
+
+      <div class="navigation">
         <ul>
-          <li><%= link_to "Check in Beer", addbeer_path %></li>
-          <span>|</span>
-          <li><%= link_to "Beer List", beers_path %></li>
-          <span>|</span>
-          <li><%= link_to "Discover Breweries", breweries_path %></li>
-          <span>|</span>
-          <li><%= link_to "Discover Bars", locations_path %></li>
-          <span>|</span>
           <li><%= link_to "Profile", current_user %></li>
-          <span>|</span>
           <li><%= link_to "Users", users_path %></li>
-          <span>|</span>
           <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-          <span>|</span>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
         </ul>
       </div>
     <% else %>
         <h2 class="loginLink"><%= link_to "Log in", login_path %></h2>
     <% end %>
+  </div>
+
+  <div id="navBar" class="navBar">
+    <ul>
+      <li><%= link_to "Check in Beer", addbeer_path %></li>
+      <li><%= link_to "Beer List", beers_path %></li>
+      <li><%= link_to "Discover Breweries", breweries_path %></li>
+      <li><%= link_to "Discover Bars", locations_path %></li>
+    </ul>
   </div>
 </header>
