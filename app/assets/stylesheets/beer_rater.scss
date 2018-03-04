@@ -5,7 +5,10 @@ header{
 
 
 .headerFlex{
+  position: relative;
+  z-index: 100;
   width: 100%;
+  background-color: white;
   font-family: 'Oswald', sans-serif;
   display: flex;
   flex-direction: row;
@@ -18,16 +21,17 @@ header{
   }
 
   .navigation{
-    // padding-top: 40px;
-    // padding-right: 5%;
     width: 90%;
+
     ul{
       margin: 35px;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      // justify-content: space-between;
+      float: right;
       li{
         font-size: 24px;
+        padding-left: 25px;
         // padding-left: 40px;
       }
     }
@@ -35,11 +39,11 @@ header{
 }
 
 
-
 .form{
   border-radius: 30px;
   font-family: 'Oswald', sans-serif;
   width: 85%;
+  padding-bottom: 40px;
   margin: auto;
   height: 100%;
   background-color: white;
@@ -48,7 +52,7 @@ header{
     // padding-left: 17%;
     text-align: center;
     font-size: 60px;
-    padding-top: 20px;
+    padding-top: 60px;
     padding-bottom: 30px;
   }
   // a:first-of-type{
@@ -66,16 +70,18 @@ header{
       font-size: 16px;
       font-weight: bold;
       display: flex;
-      justify-content: space-between;
-      width: 35%;
+      flex-direction: column;
+      width: 50%;
+      input{
+        margin-top: 6px;
+      }
     }
     .form-control{
       background-color: #ededed;
     }
   }
   table{
-    // margin-left: 10%;
-    // margin-top: 30px;
+    width: 85%;
     margin: 30px auto;
     th{
       font-size: 18px;
@@ -87,8 +93,8 @@ header{
       }
     }
     td{
-      padding-bottom: 12px;
-      padding-top: 10px;
+      padding-bottom: 15px;
+      padding-top: 15px;
     }
     td, th{
       padding-right: 15px;
@@ -132,6 +138,12 @@ header{
   border-radius: 5px;
   font-size: 18px;
   font-family: 'Oswald', sans-serif;
+}
+
+.field{
+  input{
+    background-color: #ededed;
+  }
 }
 
 .newUser{
