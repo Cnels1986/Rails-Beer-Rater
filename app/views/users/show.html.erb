@@ -5,12 +5,16 @@
       <h1>
         <%= @user.name %>'s Checkins
       </h1>
+      <div>
+        <%= link_to "Edit Profile", edit_user_path(current_user) %>
+      </div>
     </section>
   </aside>
 
   <table>
     <thead>
       <tr>
+        <th colspan="1"></th>
         <th>Name</th>
         <th>Brewery</th>
         <th>Location</th>
@@ -21,6 +25,9 @@
     <tbody>
       <% @beers.each do |beer| %>
         <tr>
+          <td class="pic">
+              <%= image_tag beer.picture.url if beer.picture? %>
+          </td>
           <td><%= beer.name %></td>
           <td><%= beer.brewery.name %></td>
           <td><%= beer.location.name %></td>
