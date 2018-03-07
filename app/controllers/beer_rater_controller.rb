@@ -3,7 +3,7 @@ class BeerRaterController < ApplicationController
   end
 
   def beers
-    @beers = Beer.all
+    @beers = Beer.paginate(page: params[:page], per_page: 10)
   end
 
   def breweries

@@ -3,9 +3,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <%= @user.email %>
+        <%= @user.name %>'s Checkins
       </h1>
     </section>
   </aside>
@@ -33,4 +31,5 @@
 
     </tbody>
   </table>
+  <%= will_paginate @beers%>
 </div>

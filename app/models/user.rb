@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :beers
+  has_many :beers, dependent: :destroy
 
 
   attr_accessor :remember_token, :activation_token
