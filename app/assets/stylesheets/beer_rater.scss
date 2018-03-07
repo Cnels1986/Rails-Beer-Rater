@@ -50,7 +50,7 @@ header{
     text-align: center;
     font-size: 60px;
     padding-top: 60px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
   form{
     border-left: 3px solid black;
@@ -74,7 +74,7 @@ header{
     }
   }
   table{
-    width: 85%;
+    width: 92%;
     margin: 30px auto;
     th{
       font-size: 18px;
@@ -93,7 +93,7 @@ header{
         text-decoration: none;
       }
     }
-    td, th{
+    th{
       padding-right: 15px;
     }
     tbody{
@@ -103,6 +103,10 @@ header{
       tr:first-of-type{
         border: none;
       }
+      // tr:nth-of-type(even){
+      //   padding: 0;
+      //   border: none;
+      // }
     }
   }
 }
@@ -146,6 +150,9 @@ header{
 .newUser{
   text-align: center;
   padding-top: 30px;
+  a{
+    color: black;
+  }
 }
 
 .container{
@@ -185,6 +192,23 @@ header{
         color: black;
         text-decoration: none;
       }
+    }
+  }
+}
+
+.pic{
+  img{
+    height: auto;
+    width: 75px;
+    padding-top: 10px;
+  }
+}
+
+.user_info{
+  div{
+    a{
+      text-decoration: none;
+      color: black;
     }
   }
 }

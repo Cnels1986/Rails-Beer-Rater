@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <th colspan="1"></th>
       <th>User</th>
       <th>Name</th>
       <th>Brewery</th>
@@ -16,7 +17,9 @@
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <!-- change to display user's name beer.user.name? -->
+        <td class="pic">
+            <%= image_tag beer.picture.url if beer.picture? %>
+        </td>
         <td><%= beer.user.name %></td>
         <td><%= beer.name %></td>
         <td><%= beer.brewery.name %></td>
