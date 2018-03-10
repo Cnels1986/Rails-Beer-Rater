@@ -4,25 +4,25 @@
 <div>
   <div>
     <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages' %>
+
     <div>
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, placeholder: 'Name' %>
     </div>
 
     <div>
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control'  %>
+      <%= f.email_field :email, placeholder: 'Email Address'  %>
     </div>
 
     <div>
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control'  %>
+      <%= f.password_field :password, placeholder: 'Password'  %>
     </div>
 
     <div>
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control'  %>
+      <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation'%>
     </div>
 
       <%= f.submit "Create my account", class: "button" %>

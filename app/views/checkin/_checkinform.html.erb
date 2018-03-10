@@ -1,12 +1,12 @@
 <%= form_for :checkin do |f| %>
   <div class="field">
     <%= f.label :beer_name %>
-    <%= f.text_field :beer_id %>
+    <%= f.text_field :beer_id, placeholder: 'What are you drinking?' %>
   </div>
 
   <div class="field">
     <%= f.label :rating %>
-    <%= f.number_field :rating, id: :beer_rating %>
+    <%= f.number_field :rating, id: :beer_rating, placeholder: 'Rating (1-5)' %>
   </div>
 
   <div class="actions">
