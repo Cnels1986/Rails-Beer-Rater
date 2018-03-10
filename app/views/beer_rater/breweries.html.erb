@@ -1,5 +1,5 @@
 <% provide(:title, "Breweries") %>
-<h1>Who To drink?</h1>
+<h1>Discover Breweries</h1>
 
 <table>
   <thead>
@@ -14,7 +14,7 @@
     <% @breweries.each do |brewery| %>
       <tr>
         <td><%= brewery.id %></td>
-        <td><%= link_to brewery.name, brewery %></td>
+        <td><%= link_to brewery.name.split.map(&:capitalize)*' ', brewery %></td>
       </tr>
     <% end %>
   </tbody>

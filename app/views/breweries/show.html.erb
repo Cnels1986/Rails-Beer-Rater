@@ -3,7 +3,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @brewery.name %> - Checkins
+        <%= @brewery.name.split.map(&:capitalize)*' ' %>'s Checked in Beers
       </h1>
     </section>
   </aside>
@@ -11,24 +11,17 @@
   <table>
     <thead>
       <tr>
-        <th>User</th>
         <th>Name</th>
-        <th>Location</th>
         <th>Beer type</th>
-        <th>Rating</th>
       </tr>
     </thead>
     <tbody>
       <% @beers.each do |beer| %>
         <tr>
-          <td><%= beer.user.name %></td>
-          <td><%= beer.name %></td>
-          <td><%= beer.location.name %></td>
-          <td><%= beer.beer_type %></td>
-          <td><%= beer.rating %></td>
+          <td><%= link_to beer.name.split.map(&:capitalize)*' ', beer %></td>
+          <td><%= beer.beer_type.split.map(&:capitalize)*' ' %></td>
         </tr>
       <% end %>
-
     </tbody>
   </table>
 </div>

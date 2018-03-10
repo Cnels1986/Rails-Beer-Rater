@@ -1,0 +1,31 @@
+<% provide(:title, @beer.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @beer.name.split.map(&:capitalize)*' ' %> Check Ins
+      </h1>
+    </section>
+  </aside>
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan = '1'></th>
+        <th>User</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @checkins.each do |checkin| %>
+        <tr>
+          <td class="pic">
+              <%= image_tag checkin.picture.url if checkin.picture? %>
+          </td>
+          <td><%= checkin.user.name.split.map(&:capitalize)*' ' %></td>
+          <td><%= checkin.rating %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

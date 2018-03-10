@@ -1,31 +1,21 @@
 <% provide(:title, "Beers") %>
-<h1>Brews</h1>
+<h1>Beer List</h1>
 
 <table>
   <thead>
     <tr>
-      <th colspan="1"></th>
-      <th>User</th>
       <th>Name</th>
       <th>Brewery</th>
-      <th>Location</th>
       <th>Beer type</th>
-      <th>Rating</th>
     </tr>
   </thead>
 
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td class="pic">
-            <%= image_tag beer.picture.url if beer.picture? %>
-        </td>
-        <td><%= beer.user.name %></td>
-        <td><%= beer.name %></td>
-        <td><%= beer.brewery.name %></td>
-        <td><%= beer.location.name %></td>
-        <td><%= beer.beer_type %></td>
-        <td><%= beer.rating %></td>
+        <td><%= link_to beer.name.split.map(&:capitalize)*' ', beer %></td>
+        <td><%= link_to beer.brewery.name.split.map(&:capitalize)*' ', beer.brewery %></td>
+        <td><%= beer.beer_type.split.map(&:capitalize)*' ' %></td>
       </tr>
     <% end %>
   </tbody>

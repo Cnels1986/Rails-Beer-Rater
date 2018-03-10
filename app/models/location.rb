@@ -1,3 +1,3 @@
 class Location < ApplicationRecord
-  has_many :beers
+  # has_many :checkins
 end

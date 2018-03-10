@@ -14,7 +14,7 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.id %></td>
-        <td><%= link_to location.name, location %></td>
+        <td><%= link_to location.name.split.map(&:capitalize)*' ', location %></td>
       </tr>
     <% end %>
   </tbody>

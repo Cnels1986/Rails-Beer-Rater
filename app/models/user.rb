@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :beers, dependent: :destroy
-
+  has_many :checkins
+  has_many :beers, :through => :checkins, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email

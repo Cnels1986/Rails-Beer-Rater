@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
   def show
       @user = User.find(params[:id])
-      @beers = Beer.where(user_id: @user.id)
-      @beers = Beer.paginate(page: params[:page], per_page: 10)
+      # @checkin = Checkin.where(user_id: @user.id)
+      # @checkin = Checkin.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -18,10 +18,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    # Not the final implementation!
+    @user = User.new(user_params)
     if @user.save
-      # @user.send_activation_email
-      # flash[:info] = "Please check your email to activate your account."
       log_in(@user)
       redirect_to beers_path
     else
@@ -30,6 +28,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
