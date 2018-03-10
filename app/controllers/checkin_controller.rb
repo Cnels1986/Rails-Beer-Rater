@@ -11,7 +11,7 @@ class CheckinController < ApplicationController
 
       if @checkin.save
         flash[:info] = "Beer checked in."
-        redirect_to beers_path
+        redirect_to viewcheckin_path
       else
         render 'new'
       end
