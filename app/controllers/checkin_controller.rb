@@ -6,8 +6,9 @@ class CheckinController < ApplicationController
   def create
     beer = Beer.find_or_create_by(name: params[:checkin][:beer_id].downcase)
     user = current_user
+    location = Location.find_or_create_by(name: params[:checkin][:location_id].downcase)
 
-    @checkin = Checkin.new(checkin_params.merge(beer_id: beer.id, user_id: user.id))
+    @checkin = Checkin.new(checkin_params.merge(beer_id: beer.id, user_id: user.id, location_id: location.id))
 
       if @checkin.save
         flash[:info] = "Beer checked in."

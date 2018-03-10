@@ -6,14 +6,19 @@ User.create!(name:  "Chris Nelson",
              activated: true,
              activated_at: Time.zone.now)
 
-# Brewery.create(name: 'Tired Hands')
-# Brewery.create(name: 'Troegs')
-# Brewery.create(name: 'Victory')
-#
-# Location.create(name: 'Beer Mongers')
-# Location.create(name: 'The Fridge')
-# Location.create(name: 'First Post')
-#
-# Beer.create(user_id: 1, name: 'Hop Hands', brewery_id: 1, location_id: 1, beer_type: 'Pale Ale', rating: 5)
-# Beer.create(user_id: 1, name: 'Soft Sphere', brewery_id: 1, location_id: 1, beer_type: 'IPA', rating: 5)
-# Beer.create(user_id: 1, name: 'Golden Monkey', brewery_id: 3, location_id: 3, beer_type: 'Belgian Tripel', rating: 5)
+Brewery.create(name: 'Tired Hands')
+Brewery.create(name: 'Troegs')
+Brewery.create(name: 'Victory')
+Brewery.create(name: 'Miller')
+Brewery.create(name: 'Yuengling')
+
+Location.create(name: 'Beer Mongers')
+Location.create(name: 'The Fridge')
+Location.create(name: 'First Post')
+Location.create(name: 'The Vault')
+
+Beer.create(name: 'Hop Hands', brewery_id: 1, beer_type: 'IPA')
+Beer.create(name: 'Golden Monkey', brewery_id: 3, beer_type: 'Belgian Tripel')
+Beer.create(name: 'Alien Church', brewery_id: 1, beer_type: 'Double IPA')
+Beer.create(name: 'Miller Lite', brewery_id: 4, beer_type: 'Pilsner')
+Beer.create(name: 'Nugget Nectar', brewery_id: 2, beer_type: 'Amber Ale')

@@ -2,7 +2,7 @@ class Checkin < ApplicationRecord
   belongs_to :user
   belongs_to :beer
   accepts_nested_attributes_for :beer
-  # belongs_to :location
+  belongs_to :location
 
   validates :beer_id, presence: true
   validates :rating, presence: true
