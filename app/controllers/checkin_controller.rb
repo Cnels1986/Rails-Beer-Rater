@@ -14,7 +14,6 @@ class CheckinController < ApplicationController
         redirect_to beers_path
       else
         render 'new'
-        flash[:info] = "Whoops."
       end
   end
 
