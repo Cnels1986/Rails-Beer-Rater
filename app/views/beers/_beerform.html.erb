@@ -1,5 +1,5 @@
 <%= form_with(model: beer, local: true) do |form| %>
-  <% if beer.errors.any? %>
+<% if beer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(beer.errors.count, "error") %> prohibited this beer from being saved:</h2>
 
@@ -11,44 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :beer_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :brewery_id %>
-    <%= form.text_field :brewery_name %>
-  </div>
+<div class="field">
+  <%= form.label :beer_name %>
+  <%= form.text_field :name, id: :beer_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :location_id %>
-    <%= form.text_field :location_name %>
-  </div>
+<div class="field">
+  <%= form.label :brewery_id %>
+  <%= form.text_field :brewery_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :beer_type %>
-    <%= form.text_field :beer_type, id: :beer_beer_type %>
-  </div>
+<div class="field">
+  <%= form.label :beer_type %>
+  <%= form.text_field :beer_type, id: :beer_beer_type %>
+</div>
 
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating, id: :beer_rating %>
-  </div>
+<div class="actions">
+  <%= form.submit "Add Beer", class: "button"  %>
+</div>
 
-  <div class="actions">
-    <%= form.submit "Check In", class: "button"  %>
-  </div>
-  <span class="picture">
-    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png'  %>
-  </span>
 <% end %>
-
-<script type="text/javascript">
-  $('#beer_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
-</script>

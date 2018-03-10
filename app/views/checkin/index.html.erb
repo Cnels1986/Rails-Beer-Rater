@@ -1,13 +1,10 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, "Checkins") %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @user.name %>'s Checkins
+        What's Everyone Drinking?
       </h1>
-      <div>
-        <%= link_to "Edit Profile", edit_user_path(current_user) %>
-      </div>
     </section>
   </aside>
 
@@ -15,6 +12,7 @@
     <thead>
       <tr>
         <th colspan="1"></th>
+        <th>User</th>
         <th>Name</th>
         <th>Brewery</th>
         <th>Beer type</th>
@@ -22,12 +20,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @user.checkins.each do |checkin| %>
+      <% @checkin.each do |checkin| %>
         <tr>
           <td class="pic">
               <%= image_tag checkin.picture.url if checkin.picture? %>
           </td>
-          <td><%= checkin.beer.name.split.map(&:capitalize)*' ' %></td>
+          <td><%= link_to checkin.user.name.split.map(&:capitalize)*' ', checkin.user %></td>
+          <td><%= link_to checkin.beer.name.split.map(&:capitalize)*' ', checkin.beer %></td>
           <td><%= link_to checkin.beer.brewery.name.split.map(&:capitalize)*' ' , checkin.beer.brewery%></td>
           <td><%= checkin.beer.beer_type.split.map(&:capitalize)*' ' %></td>
           <td><%= checkin.rating %></td>

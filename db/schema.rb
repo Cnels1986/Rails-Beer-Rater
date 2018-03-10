@@ -10,30 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307191405) do
+ActiveRecord::Schema.define(version: 20180309210406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beers", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "name"
     t.bigint "brewery_id"
-    t.bigint "location_id"
     t.string "beer_type"
-    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture"
     t.index ["brewery_id"], name: "index_beers_on_brewery_id"
-    t.index ["location_id"], name: "index_beers_on_location_id"
-    t.index ["user_id"], name: "index_beers_on_user_id"
   end
 
   create_table "breweries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "checkins", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "beer_id"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture"
+    t.index ["beer_id"], name: "index_checkins_on_beer_id"
+    t.index ["user_id"], name: "index_checkins_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -57,6 +62,6 @@ ActiveRecord::Schema.define(version: 20180307191405) do
   end
 
   add_foreign_key "beers", "breweries"
-  add_foreign_key "beers", "locations"
-  add_foreign_key "beers", "users"
+  add_foreign_key "checkins", "beers"
+  add_foreign_key "checkins", "users"
 end

@@ -8,22 +8,22 @@
 
       <div class="field">
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name %>
       </div>
       <div class="field">
         <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email %>
       </div>
       <div class="field">
         <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password %>
       </div>
       <div class="filed">
         <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation %>
       </div>
 
-      <%= f.submit "Save changes", class: "btn btn-primary button" %>
+      <%= f.submit "Save changes", class: "button" %>
     <% end %>
   </div>
 </div>
