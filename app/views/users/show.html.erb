@@ -14,6 +14,7 @@
         <th colspan="1"></th>
         <th>Name</th>
         <th>Brewery</th>
+        <th>Bar</th>
         <th>Beer type</th>
         <th>Rating</th>
       </tr>
@@ -26,6 +27,7 @@
           </td>
           <td><%= link_to checkin.beer.name.split.map(&:capitalize)*' ', checkin.beer %></td>
           <td><%= link_to checkin.beer.brewery.name.split.map(&:capitalize)*' ' , checkin.beer.brewery%></td>
+          <td><%= checkin.location.name.split.map(&:capitalize)*' ' if checkin.location %></td>
           <td><%= checkin.beer.beer_type.split.map(&:capitalize)*' ' %></td>
           <td><%= checkin.rating %></td>
         </tr>

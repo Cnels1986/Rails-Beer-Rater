@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    @beers = Beer.where(location_id: @location.id)
+    @checkins = Checkin.where(location_id: @location.id)
   end
 
   private
