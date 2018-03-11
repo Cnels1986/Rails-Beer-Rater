@@ -12,11 +12,6 @@ Brewery.create(name: 'Victory')
 Brewery.create(name: 'Miller')
 Brewery.create(name: 'Yuengling')
 
-Location.create(name: 'Beer Mongers')
-Location.create(name: 'The Fridge')
-Location.create(name: 'First Post')
-Location.create(name: 'The Vault')
-
 Beer.create(name: 'Hop Hands', brewery_id: 1, beer_type: 'IPA')
 Beer.create(name: 'Golden Monkey', brewery_id: 3, beer_type: 'Belgian Tripel')
 Beer.create(name: 'Alien Church', brewery_id: 1, beer_type: 'Double IPA')
